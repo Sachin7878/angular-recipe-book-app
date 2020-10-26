@@ -3,7 +3,7 @@
   "version": "0.0.0",
   "scripts": {
     "ng": "ng",
-    "start": "ng serve",
+    "start": "node server.js",
     "build": "ng build",
     "test": "ng test",
     "lint": "ng lint",
@@ -11,15 +11,20 @@
     "dev:ssr": "ng run ng-complete-guide:serve-ssr",
     "serve:ssr": "node dist/ng-complete-guide/server/main.js",
     "build:ssr": "ng build --prod && ng run ng-complete-guide:server:production",
-    "prerender": "ng run ng-complete-guide:prerender"
+    "prerender": "ng run ng-complete-guide:prerender",
+    "heroku-postbuild": "ng build --prod"
+  },
+  "engines": {
+    "node": "12.4.0",
+    "npm": "6.9.0"
   },
   "private": true,
   "dependencies": {
-    "@angular/cli": "^10.2.0",
-    "@angular/compiler-cli": "^10.1.6",
     "@angular/animations": "~10.1.0",
+    "@angular/cli": "^10.2.0",
     "@angular/common": "~10.1.0",
     "@angular/compiler": "~10.1.0",
+    "@angular/compiler-cli": "^10.1.6",
     "@angular/core": "~10.1.0",
     "@angular/forms": "~10.1.0",
     "@angular/platform-browser": "~10.1.0",
@@ -31,9 +36,11 @@
     "@ngrx/store": "^10.0.1",
     "@nguniversal/express-engine": "^10.1.0",
     "bootstrap": "3.3.7",
-    "express": "^4.15.2",
+    "express": "^4.17.1",
+    "path": "^0.12.7",
     "rxjs": "~6.6.0",
     "tslib": "^2.0.0",
+    "typescript": "~4.0.2",
     "zone.js": "~0.10.2"
   },
   "devDependencies": {
